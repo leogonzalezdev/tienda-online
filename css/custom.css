@@ -36,6 +36,51 @@ header {
     text-align: center;
     color: var(--white);
 }
+.alert{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2.5rem;
+    border-radius: 35px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: var(--green);
+    transition: all 600ms;
+    /* position: fixed;
+    margin: 5% auto;
+    left: 0;
+  right: 0;
+    top: 0;
+    transition: all 600ms;
+    margin-left: auto;
+    opacity: 0;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0 2rem;
+    width: 300px;
+    align-items: center;
+    border-radius: 35px;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    z-index: 100;
+    background-color: var(--green);
+    color: var(--white); */
+}
+.alert a{
+    text-decoration: none;
+    color: var(--grey);
+    padding: 0 .7rem;
+    margin-left: 1rem;
+    background-color: var(--red);
+    border-radius: 50%;
+}
+.alert p{
+    margin: 0;
+}
 .logo{
     font-family: "Raleway", sans-serif;
     color: var(--green);
