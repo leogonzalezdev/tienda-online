@@ -4,6 +4,7 @@ const listaCursos = document.querySelector('#lista-cursos');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const alert = document.querySelector('.alert');
 const closeAlert = document.querySelector('.close-alert');
+const buscador = document.querySelector('#buscador');
 let artitculosCarrito = [];
 cargarEventListener();
 
@@ -20,7 +21,8 @@ function cargarEventListener(){
         artitculosCarrito = [];
         limpiarHTML();
     });
-    // 
+    // Buscador 
+    buscador.addEventListener('blur', buscarCurso);
 }
 
 // Funciones
@@ -40,6 +42,13 @@ function eliminarCurso(e){
         artitculosCarrito = artitculosCarrito.filter(curso => curso.id !== cursoId);
         carritoHTML();
     }
+}
+// Buscar curso
+function buscarCurso(e){
+    const count = listaCursos.childNodes[3].childElementCount;
+    const card = listaCursos.childNodes[3].childNodes[1].textContent;
+    if(card)
+    console.log(card)
 }
 // Mostrar alert
 function mostrarAlert(){

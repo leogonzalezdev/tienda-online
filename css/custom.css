@@ -105,13 +105,13 @@ ul {
 }
 .submenu:hover #carrito{
     display: block;
-    position: absolute;
+    position: fixed;
     right:0;
-    top:100%;
-    z-index: 1;
+    top:0;
+    z-index: 10;
     background-color: var(--blue-hover);
-    padding: 20px;
-    min-height: 400px;
+    padding: 3rem;
+    min-height: auto;
     min-width: 300px;
 }
 .vacio {
@@ -130,6 +130,7 @@ ul {
     margin-bottom: 0;
 }
 .contenido-hero form #buscador {
+    color: var(--dark);
     height: 50px;
     margin-bottom: 0;
 }
@@ -252,12 +253,27 @@ ul {
 }
 
 .footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--blue);
+    align-items: center;
+    justify-content: space-around;
     margin-top: 40px;
-    border-top:1px solid #aaa;;
-    padding-top: 40px;   
+    padding: 1rem 6rem;   
 }
 .footer .menu a{
-display: block;
-margin-bottom: 10px;
-text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--green);
+}
+.footer .menu a:hover{
+    color: var(--green-hover);
+}
+@media (min-width:728px) {
+    .submenu:hover #carrito{
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
 }
