@@ -10,8 +10,13 @@
   --grey:#eef3f7;
   --white: #ffffff;
 }
+*{
+    margin: 0;
+    padding: 0;
+}
 html {
     font-size: 62.5%;
+    font-family: "Raleway", sans-serif;
 }
 body {
     background-color: var(--blue-hover);
@@ -27,20 +32,22 @@ h4 {
     font-size: 16px;
     font-weight: 700;
 }
+/* Header */
 header {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 20px 0 0 0;
+    padding: 2rem 3rem;
     background: var(--blue-hover);
     text-align: center;
     color: var(--white);
 }
+/* Mensaje de alerta */
 .alert{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem 2.5rem;
+    padding: .9rem 2.5rem;
     border-radius: 35px;
     position: fixed;
     left: 0;
@@ -53,24 +60,25 @@ header {
 .alert a{
     text-decoration: none;
     color: var(--grey);
-    padding: 0 .7rem;
+    padding: .3rem .9rem;
+    font-size: 1.5rem;
     margin-left: 1rem;
     background-color: var(--red);
     border-radius: 50%;
 }
 .alert p{
+    font-size: 1.5rem;
     margin: 0;
 }
+/* Logotipo */
 .logo{
+    font-size: 3rem;
+    padding: .5rem 3rem;
     font-family: "Raleway", sans-serif;
     color: var(--green);
     font-weight: 400;
 }
-@media (min-width: 750px) {
-    header {
-        text-align: left;
-    }
-}
+/* btn Borrar curso del carrito */
 .borrar-curso {
     background-color: red;
     border-radius: 50%;
@@ -83,12 +91,30 @@ header {
 ul {
     list-style: none;
 }
-#hero {
+/* Home */
+#home .row{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: var(--white);
+    padding: 1rem 3rem;
     background-image:url(../img/hero.jpg);
     height: 350px;
     background-size: cover;
 }
+#home .row h2{
+    font-size: 5rem;
+    margin: 1rem;
+}
+#home .row p{
+    margin: 1rem;
+    font-size: 2rem;
+}
 #encabezado {
+    font-size: 4rem;
+    font-weight: 600;
     margin: 30px 0;
 }
 .submenu {
@@ -97,22 +123,30 @@ ul {
     transition: all 600ms;
 }
 .submenu img{
-    width: 30px;
+    width: 50px;
     height: auto;
 }
 .submenu #carrito{
     display: none;
 }
 .submenu:hover #carrito{
-    display: block;
-    position: fixed;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
     right:0;
     top:0;
     z-index: 10;
     background-color: var(--blue-hover);
-    padding: 3rem;
+    padding: 2rem;
     min-height: auto;
-    min-width: 300px;
+    width: 500px;
+}
+th,
+td
+{
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 .vacio {
     padding: 10px;
@@ -121,37 +155,43 @@ ul {
     border-radius: 10px;
     color: white;
 }
-.contenido-hero {
-    margin-top: 80px;
-    color: white;
-}
-.contenido-hero form {
+.row form {
+    display: block;
     position: relative;
     margin-bottom: 0;
 }
-.contenido-hero form #buscador {
+.row form #buscador {
+    border: none;
+    border-radius: 35px;
+    padding: 0rem 6rem;
     color: var(--dark);
-    height: 50px;
+    height: 5rem;
     margin-bottom: 0;
 }
-.contenido-hero form .submit-buscador {
+.row form .submit-buscador {
     position: absolute;
     right:0;
     top:0;
-    height: 100%;
-    padding: 0;
+    height: 5rem;
     display: block;
     text-indent: -9999px;
     width: 50px;
+    background-color: var(--white);
     background-image: url(../img/lupa.png);
     background-position: right center;
     background-repeat: no-repeat;
+    border-radius: 0 35px 35px 0;
     border:none;
 }
 
 
 .barra {
-    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem 2rem;
     background: var(--green-hover); /* Old browsers */
     background: -moz-linear-gradient(left, var(--green) 0%, var(--green-hover) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left, var(--green) 0%, var(--green-hover) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -160,21 +200,16 @@ ul {
 }
 
 .barra p {
-    margin:0;
     color: white;
+    font-size: 1.5rem;
+    margin: 2rem;
 }
 .icono {
     background-repeat: no-repeat;
     background-position: left center;
-    padding-left: 60px;
-    background-size: 30px;
-    margin-bottom: 40px;
+    padding-left: 2rem;
+    background-size: 3rem;
     text-align: center;
-}
-@media (min-width: 750px) {
-    .icono {
-        margin-bottom:0;
-    }
 }
 .icono1 {
     background-image: url(../img/icono1.png);
@@ -238,6 +273,7 @@ ul {
     font-size: 22px;
 }
 .btn{
+    font-size: 1.6rem;
     text-align: center;
     display: block;
     text-decoration: none;
@@ -270,10 +306,17 @@ ul {
 .footer .menu a:hover{
     color: var(--green-hover);
 }
-@media (min-width:728px) {
+
+
+@media (max-width:728px) {
     .submenu:hover #carrito{
-        position: fixed;
-        right: 0;
-        top: 0;
+        width: 100%;
+    }
+    table{
+        font-size: 1rem;
+    }
+    .btn-trash{
+        font-size: 1rem;
+        width: 100%;
     }
 }
