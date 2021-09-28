@@ -127,19 +127,23 @@ ul {
     height: auto;
 }
 .submenu #carrito{
-    display: none;
+    opacity: 0;
+    position: fixed;
 }
 .submenu:hover #carrito{
     display: flex;
+    opacity: 1;
     flex-direction: column;
     position: absolute;
+    justify-content: center;
     right:0;
     top:0;
     z-index: 10;
     background-color: var(--blue-hover);
     padding: 2rem;
     min-height: auto;
-    width: 500px;
+    width: 70vw;
+    max-width: 700px;
 }
 th,
 td
@@ -287,7 +291,10 @@ td
     background-color: var(--green-hover);
     color: var(--white);
 }
-
+.btn-trash{
+    margin: auto;
+    width: 50%;
+}
 .footer {
     display: flex;
     flex-wrap: wrap;
@@ -310,11 +317,6 @@ td
 
 @media (max-width:728px) {
     #carrito{
-        position: absolute;
-        top: 0;
-        left: auto;
-        right: auto;
-        margin-left: 1rem;
         width: 70vw;
         height: 70vh;
     }
