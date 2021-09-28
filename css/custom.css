@@ -48,27 +48,7 @@ header {
     top: 0;
     background-color: var(--green);
     transition: all 600ms;
-    /* position: fixed;
-    margin: 5% auto;
-    left: 0;
-  right: 0;
-    top: 0;
-    transition: all 600ms;
-    margin-left: auto;
     opacity: 0;
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0 2rem;
-    width: 300px;
-    align-items: center;
-    border-radius: 35px;
-    justify-content: space-between;
-    font-size: 1.8rem;
-    z-index: 100;
-    background-color: var(--green);
-    color: var(--white); */
 }
 .alert a{
     text-decoration: none;
