@@ -43,6 +43,15 @@ header {
     color: var(--white);
 }
 /* Mensaje de alerta */
+.alert-success{
+    background-color: var(--green);
+    opacity: 0;
+}
+.alert-danger{
+    background-color: var(--red);
+    color: var(--white);
+    opacity: 0;
+}
 .alert{
     display: flex;
     justify-content: space-between;
@@ -52,10 +61,9 @@ header {
     position: fixed;
     left: 0;
     right: 0;
+    z-index: 500;
     top: 0;
-    background-color: var(--green);
     transition: all 600ms;
-    opacity: 0;
 }
 .alert a{
     text-decoration: none;
@@ -123,7 +131,7 @@ ul {
     transition: all 600ms;
 }
 .submenu img{
-    width: 50px;
+    width: 35px;
     height: auto;
 }
 .submenu #carrito{
@@ -140,10 +148,10 @@ ul {
     top:0;
     z-index: 10;
     background-color: var(--blue-hover);
-    padding: 2rem;
+    padding: 3rem 1rem;
     min-height: auto;
     width: 70vw;
-    max-width: 700px;
+    max-width: 600px;
 }
 th,
 td

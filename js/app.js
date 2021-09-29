@@ -2,9 +2,9 @@ const carrito = document.querySelector('#carrito');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
 const listaCursos = document.querySelector('#lista-cursos');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
-const alert = document.querySelector('.alert');
+const alertSuccess = document.querySelector('.alert-success');
+const alertDanger = document.querySelector('.alert-danger');
 const closeAlert = document.querySelector('.close-alert');
-const buscador = document.querySelector('#buscador');
 let artitculosCarrito = [];
 cargarEventListener();
 
@@ -21,8 +21,6 @@ function cargarEventListener(){
         artitculosCarrito = [];
         limpiarHTML();
     });
-    // Buscador 
-    buscador.addEventListener('blur', buscarCurso);
 }
 
 // Funciones
@@ -32,7 +30,7 @@ function agregarCurso(e){
     if(e.target.classList.contains('agregar-carrito')){
         const cursoSeleccionado = e.target.parentElement.parentElement;
         leerDatosCurso(cursoSeleccionado);
-        mostrarAlert();
+        mostrarAlert('success');
     }
 }
 //Eliminar Curso
@@ -41,19 +39,18 @@ function eliminarCurso(e){
         const cursoId = e.target.getAttribute('data-id');
         artitculosCarrito = artitculosCarrito.filter(curso => curso.id !== cursoId);
         carritoHTML();
+        mostrarAlert('danger');
     }
 }
-// Buscar curso
-function buscarCurso(e){
-    const count = listaCursos.childNodes[3].childElementCount;
-    const card = listaCursos.childNodes[3].childNodes[1].textContent;
-    if(card)
-    console.log(card)
-}
 // Mostrar alert
-function mostrarAlert(){
-    alert.style.opacity = '1';
-    setTimeout(function(){ alert.style.opacity = '0';}, 3000);
+function mostrarAlert(type){
+    if( type == 'danger'){
+        alertDanger.style.opacity = '1';
+        setTimeout(function(){ alertDanger.style.opacity = '0';}, 3000);
+    }else{
+        alertSuccess.style.opacity = '1';
+        setTimeout(function(){ alertSuccess.style.opacity = '0';}, 3000);
+    }
 }
 // Extrae la informacion del curso agregado al carrito
 function  leerDatosCurso(curso){
