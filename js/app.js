@@ -14,11 +14,18 @@ function cargarEventListener(){
     closeAlert.addEventListener('click', ()=>{
         alert.style.opacity = '0';
     });
+    // Muestra los cursos de Local Storage
+    document.addEventListener('DOMContentLoaded', () => {
+        artitculosCarrito = JSON.parse(localStorage.getItem('carrito'))  || [];
+        carritoHTML();
+
+    });
     // Eliminar Curso
     carrito.addEventListener('click', eliminarCurso);
     // Vaciar carrito
     vaciarCarritoBtn.addEventListener('click', e => {
         artitculosCarrito = [];
+        sincronizarStorage();
         limpiarHTML();
     });
 }
@@ -109,7 +116,12 @@ function carritoHTML(){
         `;
         contenedorCarrito.appendChild(row);
     });
+    // Agrega carrito al Local Storage
+    sincronizarStorage();
     
+}
+function sincronizarStorage(){
+    localStorage.setItem('carrito', JSON.stringify(artitculosCarrito))
 }
 // Elimina los cursos del html
 function limpiarHTML(){
