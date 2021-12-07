@@ -17,30 +17,31 @@
     <div class="alert-container"></div>
     <!-- Header -->
     <header id="header" class="header">
-        <h3 id="logo" class="logo">Gleo</h3>
-        <ul>
-            <li class="submenu">
-                <img src="img/cart.png" id="img-carrito">
-
-                <!-- CARRITO DE COMPRAS -->
-                <div id="carrito">
-                    <table id="lista-carrito" class="">
-                        <thead>
-                            <tr>
-                                <th>Imagen</th>
-                                <th>Nombre</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <a href="#" id="vaciar-carrito" class="btn btn-trash">Vaciar Carrito <i
-                            class="fas fa-trash"></i></a>
-                </div>
-            </li>
-        </ul>
+        <div class="logo-container">
+            <h3 id="logo" class="logo">Tienda</h3>
+        </div>
+        <div class="carrito-container">
+            <button class="btn btn-carrito" id="icon-cart">
+                Ver Carrito
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <!-- CARRITO DE COMPRAS -->
+            <div id="carrito" class="carrito">
+                <table id="lista-carrito" class="">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <a href="#" id="vaciar-carrito" class="btn btn-trash">Vaciar Carrito <i class="fas fa-trash"></i></a>
+            </div>
+        </div>
     </header>
 
 
@@ -50,10 +51,10 @@
                 <h2>Aprende algo nuevo</h2>
                 <p>Todos los cursos a $15</p>
             </div>
-            <form action="#" id="busqueda" method="post" class="formulario">
+            <!-- <form action="#" id="busqueda" method="post" class="formulario">
                 <input class="u-full-width" type="text" placeholder="¿Que te gustaría Aprender?" id="buscador">
                 <input type="submit" id="submit-buscador" class="submit-buscador">
-            </form>
+            </form> -->
         </div>
     </div>
 

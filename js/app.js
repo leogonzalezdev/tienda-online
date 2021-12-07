@@ -1,5 +1,6 @@
 const carrito = document.querySelector('#carrito');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
+const iconCart = document.querySelector('#icon-cart');
 const listaCursos = document.querySelector('#lista-cursos');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const alert = document.querySelector('.alert-container');
@@ -7,6 +8,21 @@ let artitculosCarrito = [];
 cargarEventListener();
 
 function cargarEventListener() {
+    iconCart.addEventListener('click', ()=>{
+        if (carrito.classList.contains('active')) {
+            carrito.classList.remove('active');
+            iconCart.innerHTML = `
+                Ver carrito
+                <i class="fas fa-shopping-cart"></i>
+            `;
+        } else {
+            carrito.classList.add('active');
+            iconCart.innerHTML = `
+                Cerrar carrito
+                <i class="fas fa-times"></i>
+            `;
+        }
+    });
     // Agregar Curso
     listaCursos.addEventListener('click', agregarCurso);
     // Muestra los cursos de Local Storage
@@ -43,7 +59,7 @@ class UI {
         document.querySelector('body').insertBefore(divMensaje, alert);
         setTimeout(() => {
             divMensaje.remove();
-        }, 3000);
+        }, 2000);
     }
 }
 const ui = new UI();
